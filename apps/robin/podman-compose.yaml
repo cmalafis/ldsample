@@ -1,0 +1,11 @@
+version: "3"
+services:
+  robin:
+    build: .
+    image: robin-app:latest
+    container_name: robin
+    device_cgroup_rules:
+      - 'c 195:* rmw'
+    volumes:
+      - ./src:/app
+    restart: always

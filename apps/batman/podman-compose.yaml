@@ -1,0 +1,11 @@
+version: "3"
+services:
+  batman:
+    build: .
+    image: batman-app:latest
+    container_name: batman
+    device_cgroup_rules:
+      - 'c 195:* rmw'  # NVIDIA GPU access
+    volumes:
+      - ./src:/app
+    restart: always

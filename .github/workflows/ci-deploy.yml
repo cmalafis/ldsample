@@ -1,0 +1,12 @@
+name: CI Deploy
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Containers
+        run: |
+          cd apps/batman && podman build -t batman-app .
+          cd ../robin && podman build -t robin-app .
