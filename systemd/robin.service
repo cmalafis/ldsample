@@ -1,0 +1,12 @@
+[Unit]
+Description=Robin App Podman Compose
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/podman-compose -f /path/to/apps/robin/podman-compose.yaml up
+ExecStop=/usr/bin/podman-compose -f /path/to/apps/robin/podman-compose.yaml down
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

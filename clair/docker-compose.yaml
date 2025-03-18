@@ -1,0 +1,9 @@
+version: '3'
+services:
+  clair:
+    image: quay.io/projectquay/clair:v4.6.0
+    ports:
+      - "6060:6060"
+    volumes:
+      - ./config:/config
+    command: ["clair", "--config", "/config/clair-config.yaml"]

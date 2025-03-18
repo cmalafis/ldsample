@@ -1,0 +1,4 @@
+http_listen_addr: ":6060"
+log_level: "debug"
+indexer:
+  connstring: "host=localhost port=5432 user=clair dbname=clair sslmode=disable"

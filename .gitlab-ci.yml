@@ -1,0 +1,17 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  script:
+    - cd apps/batman && podman build -t batman-app .
+    - cd ../robin && podman build -t robin-app .
+
+test:
+  script:
+    - echo "Running tests"
+
+deploy:
+  script:
+    - echo "Deploying containers"
